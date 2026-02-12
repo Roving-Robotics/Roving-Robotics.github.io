@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Portfolio</title>
+  <title>Roving Robotics</title>
+  <link rel="icon" type="image/png" href="assets/rovro.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -274,17 +275,16 @@
     }
     loadProjects();
 
-    // load latest GitHub public repos
+    // load pinned GitHub repos (uses public pinned API)
     async function loadContributions() {
       const status = document.getElementById('contrib-status');
       const list = document.getElementById('contrib-list');
       try {
-        const res = await fetch('https://api.github.com/users/Ian-Wilhite/repos?per_page=8&sort=updated');
+        const res = await fetch('https://gh-pinned-repos.egoist.dev/?username=Ian-Wilhite');
         const data = await res.json();
         if (!Array.isArray(data)) throw new Error('Unexpected response');
-        const repos = data.filter(r => !r.fork).slice(0, 6);
         list.innerHTML = '';
-        repos.forEach(repo => {
+        data.forEach(repo => {
           const card = document.createElement('article');
           card.className = 'contrib-card';
           const body = document.createElement('div');
@@ -292,14 +292,14 @@
           const left = document.createElement('div');
           const title = document.createElement('div');
           title.className = 'contrib-title';
-          title.textContent = repo.full_name;
+          title.textContent = repo.repo;
           const desc = document.createElement('p');
           desc.className = 'contrib-desc';
           desc.textContent = repo.description || 'No description provided.';
           left.append(title, desc);
           const link = document.createElement('a');
           link.className = 'pill-link';
-          link.href = repo.html_url;
+          link.href = repo.link;
           link.target = '_blank';
           link.rel = 'noreferrer';
           link.textContent = 'View on GitHub';
@@ -307,10 +307,10 @@
           card.append(body);
           list.append(card);
         });
-        status.textContent = `Showing ${repos.length} latest public repos`;
+        status.textContent = `Showing ${data.length} pinned repos`;
       } catch (err) {
         console.error(err);
-        status.textContent = 'Could not load GitHub repos (check rate limits or network).';
+        status.textContent = 'Could not load pinned repos (network or rate limit).';
       }
     }
     loadContributions();
