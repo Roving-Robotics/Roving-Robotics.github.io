@@ -1,19 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Roving Robotics - A message from earth">
-  <title>Roving Robotics</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="frame-1-19">
-  <img src="images/rectangle-1-20.svg" class="rectangle-1-20" alt="rectangle-1" />
-  <p class="text-21"><span class="text-rgb-206-183-255">a message from earth </span></p>
-</div>
-<nav class="page-nav">
-  <a href="frame-2.html">Next &rarr;</a>
-</nav>
+  <div class="viewport-chrome">
+    <div class="window-dots">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+    </div>
+  </div>
+
+  <main class="frame">
+    <header class="top-nav">
+      <div class="tabs">
+        <button class="tab active">about.tsx</button>
+        <button class="tab"><span class="icon">📂</span> projects.md</button>
+        <button class="tab"><span class="icon">🤝</span> Contribution</button>
+        <button class="tab"><span class="icon">🌐</span> contact.online</button>
+        <button class="tab"><span class="icon">📄</span> CV.pdf</button>
+      </div>
+      <a class="source-link" href="#" aria-label="Source code">🗃 Source Code</a>
+    </header>
+
+    <section class="content">
+      <div class="profile-card">
+        <div class="avatar">
+          <img src="assets/avatar.svg" alt="Profile photo">
+        </div>
+        <div class="profile-meta">
+          <p class="name">Amine REBBOUH</p>
+          <p class="role">Full stack &amp; Android developer</p>
+          <p class="location">📍 Casablanca, Morocco</p>
+        </div>
+        <p class="bio">
+          Tech-savvy Full Stack &amp; Mobile Developer with a passion for blending innovation
+          and functionality. Experienced in web and Android development, crafting intuitive
+          and scalable solutions for the modern world.
+        </p>
+
+        <div class="terminal">
+          <div class="prompt">$ ./gradm.build</div>
+          <div class="line">🚀 Setting up Android environment...</div>
+          <div class="line">📱 Device connected successfully.</div>
+          <div class="line">🔗 Standing by for your contact...</div>
+        </div>
+
+        <div class="social">
+          <a href="#" aria-label="GitHub">🐱</a>
+          <a href="#" aria-label="LinkedIn">🔗</a>
+          <a href="#" aria-label="Email">✉️</a>
+          <a href="#" aria-label="Telegram">📨</a>
+        </div>
+      </div>
+
+      <div class="details">
+        <section class="panel">
+          <div class="panel-title">◎ Tech Stack</div>
+          <div class="stack-list">
+            <p><span class="label">Mobile:</span> React Native, Android Studio, Jetpack Compose</p>
+            <p><span class="label">Frontend:</span> React JS, CSS, TailwindCSS, Bootstrap, HTML</p>
+            <p><span class="label">Backend:</span> Spring-Boot, Node.js, Express</p>
+            <p><span class="label">Database:</span> PostgreSQL, MySQL</p>
+            <p><span class="label">Languages:</span> Java, Kotlin, JavaScript, PHP</p>
+            <p><span class="label">Cloud:</span> AWS, Firebase</p>
+            <p><span class="label">Others:</span> Docker, Github, Git, Agile</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">◎ Work Experience</div>
+          <div class="job-card">
+            <p class="job-title">Full Stack &amp; Mobile Developer - BimobTech / MakePlan</p>
+            <p class="job-dates">Oct 2023 - Present</p>
+            <ul class="job-highlights">
+              <li>Developed the Make Plan Android application for scanning floor plans using an external robot that generates a point cloud for precise spatial capture.</li>
+              <li>Integrated real-time photo capture during scanning, with options to add images, text, and voice notes for comprehensive documentation.</li>
+              <li>Implemented Ricoh 360 camera support for capturing immersive environment details.</li>
+              <li>Enabled direct drawing on point clouds to enhance architectural modeling and documentation.</li>
+              <li>Integrated ARCore to allow users to place measurement points in augmented reality, improving accuracy in floor plan creation.</li>
+              <li>Developed the BIMOB.tech platform, Africa’s first BIM object library, facilitating advanced BIM object management in construction projects.</li>
+              <li>Worked with React.js, JavaScript, Android Studio, MySQL, PostgreSQL, and Express.js for full-stack development.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

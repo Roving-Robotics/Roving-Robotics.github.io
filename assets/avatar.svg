@@ -1,0 +1,19 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder portrait</title>
+  <desc id="desc">Abstract gradient placeholder portrait</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" fill="#0f172a" rx="28" ry="28"/>
+  <circle cx="160" cy="120" r="70" fill="url(#g)" opacity="0.9"/>
+  <rect x="80" y="180" width="160" height="100" rx="40" fill="#111827" stroke="#22d3ee" stroke-width="6" opacity="0.8"/>
+  <rect x="120" y="200" width="40" height="60" rx="20" fill="#0f172a" opacity="0.9"/>
+  <rect x="160" y="200" width="40" height="60" rx="20" fill="#0f172a" opacity="0.9"/>
+  <circle cx="136" cy="115" r="10" fill="#0f172a"/>
+  <circle cx="184" cy="115" r="10" fill="#0f172a"/>
+  <path d="M130 140 q30 30 60 0" stroke="#0f172a" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>
