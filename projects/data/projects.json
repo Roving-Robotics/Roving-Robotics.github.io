@@ -3,7 +3,8 @@
     "id": "aqua2",
     "title": "AQUA2 Kinodynamic Controller",
     "summary": "Simulator + hybrid controller for flipper-actuated AUV; PINN fit for nonlinear hydrodynamics to improve fidelity and control response.",
-    "tags": ["ROS2", "PX4", "AUV", "PINN"],
+    "tags": ["ROS2", "PX4", "AUV", "Controls", "Simulation"],
+    "date": "04/01/2026",
     "link": "https://aarrg.jokane.net/",
     "media": "projects/media/aqua2.png"
   },
@@ -11,37 +12,47 @@
     "id": "dron",
     "title": "DRON UAV Swarm",
     "summary": "Sub-$2k disaster-response swarm using PX4, Raspberry Pi, OpenCV GCS for depth/thermal mapping in Unity; led 16-member team.",
-    "tags": ["PX4", "UAV", "OpenCV", "Unity"],
+    "tags": ["UAV", "PX4", "Perception", "Systems", "Unity"],
     "link": "https://github.com/turtle-robotics/DRON",
     "github": "https://github.com/turtle-robotics/DRON",
     "pdfs": [
       {"label": "Fall 2024 Poster", "path": "pdfs/portfolio/turtle-dron/DRON-Fall-2024.pdf"},
       {"label": "Spring 2025 Poster", "path": "pdfs/portfolio/turtle-dron/DRON-Spring-2025.pdf"}
     ],
+    "date": "01/01/2024",
     "media": "projects/media/dron.png"
   },
   {
     "id": "perch",
     "title": "Wire Perching Autonomy",
     "summary": "Perception-based offboard navigation with ROS2/PX4 to perch UAVs on wires; 90% success in HITL/SITL and field tests.",
-    "tags": ["ROS2", "PX4", "CV", "UAV"],
+    "date": "08/01/2025",
+    "tags": ["UAV", "ROS2", "PX4", "Perception", "Controls"],
     "link": "https://www.linkedin.com/posts/ian-wilhite_why-bother-perching-a-uav-most-of-the-activity-7363639305874886657-56pR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEYard4BjOGuHilqz9nVhkA1F2wFFonbc14",
     "media": "projects/media/arl.png"
   },
   {
     "id": "phoenix",
     "title": "PHOENIX Mars Rover PDR",
-    "summary": "Managed 22-person NASA L'SPACE team to PDR for subsurface ice detection rover; authored 500+ pages on TRL, risk, and architecture.",
-    "tags": ["Systems", "PDR", "NASA"],
-    "link": null,
+    "date": "07/01/2025",
+    "summary": "Managed 22-person NASA L'SPACE Mission Concept Academy (MCA) team to PDR for subsurface ice detection rover; authored 500+ pages on TRL, risk, and architecture.",
+    "tags": ["NASA", "Systems", "Documentation", "Risk", "Rover"],
+    "link": "pdfs/LSPACE-MCA_TEAM_01_PDR.pdf",
+    "pdfs": [
+      {"label": "MCA MCR", "path": "pdfs/LSPACE-MCA_TEAM_01_MCR.pdf"},
+      {"label": "MCA SRR", "path": "pdfs/LSPACE-MCA_TEAM_01_SRR.pdf"},
+      {"label": "MCA MDR", "path": "pdfs/LSPACE-MCA_TEAM_01_MDR.pdf"},
+      {"label": "MCA PDR", "path": "pdfs/LSPACE-MCA_TEAM_01_PDR.pdf"}
+    ],
     "media": "projects/media/phoenix.png"
   },
   {
     "id": "ignite",
     "title": "Thrust-Vector Lander",
     "summary": "Gimbaled thrust-vectoring concept for SEC Ignite; 1-DOF MPC, CFD/FEA trades, perfect technical score and 3rd place finish.",
-    "tags": ["MPC", "CFD", "FEA"],
-    "link": null,
+    "date": "11/01/2024",
+    "tags": ["MPC", "CFD", "Optimization", "Aerospace", "Controls"],
+    "link": "pdfs/portfolio/sec-ignite/AM5_2024.pdf",
     "github": "https://github.com/Ian-Wilhite/Ignite24",
     "pdfs": [
       {"label": "SEC Ignite Report", "path": "pdfs/portfolio/sec-ignite/AM5_2024.pdf"}
@@ -54,7 +65,8 @@
     "summary": "Designed a pegboard mount for the TURTLE Robotics Fire Extinguisher",
     "date": "03/01/2025",
     "link": "https://www.printables.com/model/1241063-pegboard-fire-extinguisher-holder",
-    "media": "projects/media/peg-fire.png"
+    "media": "projects/media/peg-fire.png",
+    "tags": ["Hardware", "CAD", "Prototyping", "Additive", "Fixtures"]
   },
   {
     "id": "nametag",
@@ -62,7 +74,8 @@
     "summary": "Made a custom OpenScad workflow to mass produce custom nametags without Solidworks",
     "date": "02/01/2026",
     "link": "https://github.com/Ian-Wilhite/TURTLE-nametag-machine",
-    "media": "projects/media/nametag.jpg"
+    "media": "projects/media/nametag.jpg",
+    "tags": ["Automation", "CAD", "OpenSCAD", "Workflow", "Prototyping"]
   },
   {
     "id": "peg-vaccum",
@@ -70,21 +83,24 @@
     "summary": "Fitting holders to a commercial handheld vaccum cleaner.",
     "date": "03/23/2025",
     "link": "https://www.printables.com/model/1241049-pegboard-handheld-vaccum-holder",
-    "media": "projects/media/peg-vaccum.png"
+    "media": "projects/media/peg-vaccum.png",
+    "tags": ["Hardware", "CAD", "Additive", "Fixtures", "Prototyping"]
   },
   {
     "id": "jack",
     "title": "Jumping Jack",
     "summary": "Robotic pneumatic piston assembly for eight 1000-hour trampoline lifecycle tests with custom fixtures and reporting.",
-    "tags": ["Test", "Pneumatics", "Automation"],
+    "tags": ["Test", "Pneumatics", "Automation", "Fixtures", "Reliability"],
     "link": null,
+    "date": "03/01/2022",
     "media": "projects/media/jack.png"
   },
   {
     "id": "antenna",
     "title": "RF Antenna Clip",
     "summary": "Designed and prototyped Fusion 360 antenna clip for fox-hunt; soldered 250+ RF PCBs and validated signal integrity.",
-    "tags": ["RF", "Fusion 360", "Hardware"],
+    "tags": ["RF", "Fusion 360", "Hardware", "Fabrication", "Testing"],
+    "date": "01/01/2022",
     "link": "https://www.wa5vjb.com/downloads.html",
     "media": "projects/media/rf-clip.png"
   },
@@ -92,7 +108,8 @@
     "id": "rover-edl",
     "title": "Rover EDL Optimization",
     "summary": "Mars rover EDL optimization across 9 parameters with 5 constraints; placed 4th of 28 teams in timed race on randomized terrain (MEEN 357).",
-    "tags": ["MATLAB", "Optimization", "Mars"],
+    "tags": ["MATLAB", "Optimization", "Mars", "Simulation", "Controls"],
+    "date": "12/01/2024",
     "link": "https://github.com/Ian-Wilhite/meenp4",
     "media": "projects/media/rover.png"
   },
@@ -100,17 +117,41 @@
     "id": "bungee",
     "title": "Bungee Jumper Modeling",
     "summary": "Dynamics & vibrations simulation of bungee jumper with variable cord stiffness and air resistance; determined optimal cord parameters (MEEN 363).",
-    "tags": ["MATLAB", "Dynamics", "Simulation"],
-    "link": "https://github.com/Ian-Wilhite/363-A1",
+    "tags": ["MATLAB", "Dynamics", "Simulation", "Optimization", "Analysis"],
+    "link": "pdfs/portfolio/meen-363/meen-363-1_Group7.pdf",
+    "date": "02/21/2025",
+    "github": "https://github.com/Ian-Wilhite/363-A1",
     "media": "projects/media/bungee.png"
+  },
+  {
+    "id": "truss",
+    "title": "2D Truss Design + Analysis",
+    "summary": "Design and analysis of 2d trusses with internal stresses given known loading conditions.",
+    "link": "pdfs/portfolio/meen-305/meen-305-Project_1.pdf",
+    "media": "projects/media/truss.png",
+    "tags": ["Structures", "Analysis", "Statics", "MATLAB", "Documentation"],
+    "pdfs": [
+      {"label": "Truss Report", "path": "pdfs/portfolio/meen-305/meen-305-Project_1.pdf"}
+    ]
   },
   {
     "id": "marbles",
     "title": "Marbles Maze",
     "summary": "Modular marble maze game for elderly; won Best Prototype Award among 18 teams at MEEN 210 Project Showcase.",
     "tags": ["SolidWorks", "Prototyping", "Design"],
-    "link": null,
+    "link": "pdfs/Meen210-m4-group13-fidgetfun.pdf",
     "media": "projects/media/marbles.png"
+  },
+  {
+    "id": "crank",
+    "title": "Dynamic Crankshaft Modeling",
+    "summary": "Modeling of torque, kinematics and reflected inertia of a mixing gearbox.",
+    "link": "pdfs/portfolio/meen-363/meen-363-3_Group7.pdf",
+    "media": "projects/media/crank.png",
+    "tags": ["Dynamics", "Simulation", "Analysis", "MATLAB", "Mechanisms"],
+    "pdfs": [
+      {"label": "Crank Report", "path": "pdfs/portfolio/meen-363/meen-363-3_Group7.pdf"}
+    ]
   },
   {
     "id": "connections",
@@ -119,5 +160,32 @@
     "tags": ["Python", "ML", "NLP"],
     "link": "https://github.com/Ian-Wilhite/Datathon24",
     "media": "projects/media/connections.png"
+  },
+  {
+    "id": "turtledocs",
+    "title": "Turtle Knowledge Base",
+    "sumary": "Open Source Robotics wiki, for public use by TURTLE Robotics and affiliates.",
+    "link": "https://docs.turtlerobotics.org/",
+    "media": "projects/media/turtledocs.png",
+    "tags": ["Documentation", "Robotics", "Wiki", "Systems", "Open Source"]
+  },
+  {
+    "id": "id_holder",
+    "title": "Turtle ID Holder",
+    "summary": "Student ID holder with TURTLE Robotics Logo",
+    "link": "https://www.printables.com/model/1598563-turtle-id-holder/files",
+    "media": "projects/media/id_holder.png",
+    "tags": ["Hardware", "CAD", "Additive", "Branding", "Prototyping"]
+  },
+  {
+    "id": "itde-rov",
+    "title": "Subsea ROV Thruster Control",
+    "summary": "Control analyses for subsea ROV: spherical fixed thruster and four-thruster gimbal configurations.",
+    "tags": ["Controls", "ROV", "Simulation", "Analysis", "Hydrodynamics"],
+    "media": "projects/media/coffin.png",
+    "pdfs": [
+      {"label": "Spherical Thruster Control", "path": "pdfs/portfolio/itde-subsea-rov/spherical-fixed-thruster-control.pdf"},
+      {"label": "Four Thruster Gimbal", "path": "pdfs/portfolio/itde-subsea-rov/four-thruster-gimabl-control.pdf"}
+    ]
   }
 ]

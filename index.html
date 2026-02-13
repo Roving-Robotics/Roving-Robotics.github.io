@@ -23,7 +23,7 @@
     <section class="content">
       <div class="profile-card">
         <div class="avatar">
-          <img src="assets/profile.png" alt="Profile photo">
+          <img src="images/optimized/profile.png" alt="Profile photo">
         </div>
         <div class="profile-meta">
           <p class="name">Ian Wilhite</p>
@@ -131,8 +131,13 @@
                 <span class="mini-role">Certifications</span>
                 <span class="mini-dates"></span>
               </div>
-              <p class="mini-body">FAA Part 107 sUAS Pilot 
-                Certified SolidWorks Associate (CSWA) 
+              <p class="mini-body">
+                FAA Part 107 sUAS Pilot 
+              </p> 
+              <p class="mini-body">
+                Certified SolidWorks Associate (CSWA)
+              </p> 
+              <p class="mini-body">
                 Licensed Ham Operator (General)
               </p>
             </div>
@@ -161,6 +166,12 @@
           <div class="projects-header">
             <h1>My Projects :</h1>
             <div class="proj-tabs"></div>
+          </div>
+
+          <div class="filter-bar">
+            <button class="filter-toggle" id="filter-toggle">Filter by tag ▾</button>
+            <div class="filter-dropdown hidden" id="filter-dropdown"></div>
+            <div class="active-tags" id="active-tags"></div>
           </div>
 
           <div class="projects-grid" id="projects-grid"></div>
@@ -203,88 +214,149 @@
       });
     });
 
-    // load projects from external JSON to keep assets organized
+    // load projects and enable tag filtering
+    let allProjects = [];
+    const selectedTags = new Set();
+
+    function renderProjects() {
+      const grid = document.getElementById('projects-grid');
+      grid.innerHTML = '';
+      const filtered = allProjects.filter(p => {
+        if (selectedTags.size === 0) return true;
+        if (!p.tags) return false;
+        return [...selectedTags].every(t => p.tags.includes(t));
+      });
+      filtered.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'project-card';
+        const media = document.createElement('div');
+        media.className = 'project-media';
+        media.style.backgroundImage = `url(${p.media}), linear-gradient(135deg, rgba(34,211,238,0.08), rgba(192,132,252,0.08))`;
+        media.setAttribute('role', 'img');
+        media.setAttribute('aria-label', `${p.title} preview`);
+        const body = document.createElement('div');
+        body.className = 'project-body';
+        const row = document.createElement('div');
+        row.className = 'project-title-row';
+        const h3 = document.createElement('h3');
+        h3.textContent = p.title;
+        const launch = document.createElement('span');
+        launch.className = 'launch';
+        launch.textContent = p.link ? '↗' : '•';
+        row.append(h3, launch);
+        const desc = document.createElement('p');
+        desc.className = 'project-desc';
+        desc.textContent = p.summary;
+        body.append(row, desc);
+
+        const hasLinks = p.github || (p.pdfs && p.pdfs.length);
+        if (hasLinks) {
+          const links = document.createElement('div');
+          links.className = 'project-links';
+          if (p.github) {
+            const gh = document.createElement('a');
+            gh.href = p.github;
+            gh.target = '_blank';
+            gh.rel = 'noreferrer';
+            gh.className = 'project-link-badge';
+            gh.textContent = 'GitHub';
+            gh.addEventListener('click', e => e.stopPropagation());
+            links.append(gh);
+          }
+          if (p.pdfs) {
+            p.pdfs.forEach(pdf => {
+              const a = document.createElement('a');
+              a.href = pdf.path;
+              a.target = '_blank';
+              a.className = 'project-link-badge project-link-pdf';
+              a.textContent = pdf.label;
+              a.addEventListener('click', e => e.stopPropagation());
+              links.append(a);
+            });
+          } else if (p.report) {
+            const r = document.createElement('a');
+            r.href = p.report;
+            r.target = '_blank';
+            r.className = 'project-link-badge project-link-pdf';
+            r.textContent = 'Report';
+            r.addEventListener('click', e => e.stopPropagation());
+            links.append(r);
+          }
+          body.append(links);
+        }
+
+        card.append(media, body);
+        if (p.link) {
+          card.addEventListener('click', () => window.open(p.link, '_blank'));
+          card.classList.add('clickable');
+        }
+        grid.append(card);
+      });
+    }
+
+    function renderTagFilters(tags) {
+      const dropdown = document.getElementById('filter-dropdown');
+      dropdown.innerHTML = '';
+      tags.forEach(tag => {
+        const label = document.createElement('label');
+        label.className = 'filter-option';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.value = tag;
+        cb.addEventListener('change', () => {
+          if (cb.checked) selectedTags.add(tag);
+          else selectedTags.delete(tag);
+          updateActiveTags();
+          renderProjects();
+        });
+        label.append(cb, document.createTextNode(tag));
+        dropdown.append(label);
+      });
+    }
+
+    function updateActiveTags() {
+      const container = document.getElementById('active-tags');
+      container.innerHTML = '';
+      selectedTags.forEach(tag => {
+        const pill = document.createElement('span');
+        pill.className = 'active-tag-pill';
+        pill.textContent = tag;
+        container.append(pill);
+      });
+    }
+
     async function loadProjects() {
       try {
         const res = await fetch('projects/data/projects.json');
-        const projects = await res.json();
-        const grid = document.getElementById('projects-grid');
-        grid.innerHTML = '';
-        projects.forEach(p => {
-          const card = document.createElement('article');
-          card.className = 'project-card';
-          const media = document.createElement('div');
-          media.className = 'project-media';
-          media.style.backgroundImage = `url(${p.media}), linear-gradient(135deg, rgba(34,211,238,0.08), rgba(192,132,252,0.08))`;
-          media.setAttribute('role', 'img');
-          media.setAttribute('aria-label', `${p.title} preview`);
-          const body = document.createElement('div');
-          body.className = 'project-body';
-          const row = document.createElement('div');
-          row.className = 'project-title-row';
-          const h3 = document.createElement('h3');
-          h3.textContent = p.title;
-          const launch = document.createElement('span');
-          launch.className = 'launch';
-          launch.textContent = p.link ? '↗' : '•';
-          row.append(h3, launch);
-          const desc = document.createElement('p');
-          desc.className = 'project-desc';
-          desc.textContent = p.summary;
-          body.append(row, desc);
-
-          // GitHub + PDF link bar
-          const hasLinks = p.github || (p.pdfs && p.pdfs.length);
-          if (hasLinks) {
-            const links = document.createElement('div');
-            links.className = 'project-links';
-            if (p.github) {
-              const gh = document.createElement('a');
-              gh.href = p.github;
-              gh.target = '_blank';
-              gh.rel = 'noreferrer';
-              gh.className = 'project-link-badge';
-              gh.textContent = 'GitHub';
-              gh.addEventListener('click', e => e.stopPropagation());
-              links.append(gh);
-            }
-            if (p.pdfs) {
-              p.pdfs.forEach(pdf => {
-                const a = document.createElement('a');
-                a.href = pdf.path;
-                a.target = '_blank';
-                a.className = 'project-link-badge project-link-pdf';
-                a.textContent = pdf.label;
-                a.addEventListener('click', e => e.stopPropagation());
-                links.append(a);
-              });
-            }
-            body.append(links);
-          }
-
-          card.append(media, body);
-          if (p.link) {
-            card.addEventListener('click', () => window.open(p.link, '_blank'));
-            card.classList.add('clickable');
-          }
-          grid.append(card);
-        });
+        allProjects = await res.json();
+        const tagSet = new Set();
+        allProjects.forEach(p => (p.tags || []).forEach(t => tagSet.add(t)));
+        const tags = Array.from(tagSet).slice(0, 15).sort();
+        renderTagFilters(tags);
+        renderProjects();
       } catch (e) {
         console.error('Failed to load projects', e);
       }
     }
     loadProjects();
 
-    // load pinned GitHub repos (uses public pinned API)
+    const filterToggle = document.getElementById('filter-toggle');
+    const filterDropdown = document.getElementById('filter-dropdown');
+    filterToggle?.addEventListener('click', () => {
+      filterDropdown.classList.toggle('hidden');
+    });
+
+    // load latest public GitHub repos (non-fork, sorted by updated)
     async function loadContributions() {
       const status = document.getElementById('contrib-status');
       const list = document.getElementById('contrib-list');
       try {
-        const res = await fetch('https://gh-pinned-repos.egoist.dev/?username=Ian-Wilhite');
+        const res = await fetch('https://api.github.com/users/Ian-Wilhite/repos?per_page=8&sort=updated');
         const data = await res.json();
         if (!Array.isArray(data)) throw new Error('Unexpected response');
+        const repos = data.filter(r => !r.fork).slice(0, 6);
         list.innerHTML = '';
-        data.forEach(repo => {
+        repos.forEach(repo => {
           const card = document.createElement('article');
           card.className = 'contrib-card';
           const body = document.createElement('div');
@@ -292,14 +364,14 @@
           const left = document.createElement('div');
           const title = document.createElement('div');
           title.className = 'contrib-title';
-          title.textContent = repo.repo;
+          title.textContent = repo.full_name;
           const desc = document.createElement('p');
           desc.className = 'contrib-desc';
           desc.textContent = repo.description || 'No description provided.';
           left.append(title, desc);
           const link = document.createElement('a');
           link.className = 'pill-link';
-          link.href = repo.link;
+          link.href = repo.html_url;
           link.target = '_blank';
           link.rel = 'noreferrer';
           link.textContent = 'View on GitHub';
@@ -307,10 +379,10 @@
           card.append(body);
           list.append(card);
         });
-        status.textContent = `Showing ${data.length} pinned repos`;
+        status.textContent = `Showing ${repos.length} latest public repos`;
       } catch (err) {
         console.error(err);
-        status.textContent = 'Could not load pinned repos (network or rate limit).';
+        status.textContent = 'Could not load GitHub repos (check rate limits or network).';
       }
     }
     loadContributions();
