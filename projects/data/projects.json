@@ -36,7 +36,7 @@
     "title": "PHOENIX Mars Rover PDR",
     "date": "07/01/2025",
     "summary": "Managed 22-person NASA L'SPACE Mission Concept Academy (MCA) team to PDR for subsurface ice detection rover; authored 500+ pages on TRL, risk, and architecture.",
-    "tags": ["NASA", "Systems", "Documentation", "Risk", "Rover"],
+    "tags": ["NASA", "Systems", "Documentation", "Risk", "Rover", "Project Management"],
     "link": "pdfs/LSPACE-MCA_TEAM_01_PDR.pdf",
     "pdfs": [
       {"label": "MCA MCR", "path": "pdfs/LSPACE-MCA_TEAM_01_MCR.pdf"},
@@ -51,7 +51,7 @@
     "title": "Thrust-Vector Lander",
     "summary": "Gimbaled thrust-vectoring concept for SEC Ignite; 1-DOF MPC, CFD/FEA trades, perfect technical score and 3rd place finish.",
     "date": "11/01/2024",
-    "tags": ["MPC", "CFD", "Optimization", "Aerospace", "Controls"],
+    "tags": ["MPC", "CFD", "Optimization", "Aerospace", "Controls", "Simulation"],
     "link": "pdfs/portfolio/sec-ignite/AM5_2024.pdf",
     "github": "https://github.com/Ian-Wilhite/Ignite24",
     "pdfs": [
@@ -63,7 +63,7 @@
     "id": "peg-fire",
     "title": "Pegboard Fire Extinguisher",
     "summary": "Designed a pegboard mount for the TURTLE Robotics Fire Extinguisher",
-    "date": "03/01/2025",
+    "date": "03/02/2025",
     "link": "https://www.printables.com/model/1241063-pegboard-fire-extinguisher-holder",
     "media": "projects/media/peg-fire.png",
     "tags": ["Hardware", "CAD", "Prototyping", "Additive", "Fixtures"]
@@ -75,7 +75,7 @@
     "date": "02/01/2026",
     "link": "https://github.com/Ian-Wilhite/TURTLE-nametag-machine",
     "media": "projects/media/nametag.jpg",
-    "tags": ["Automation", "CAD", "OpenSCAD", "Workflow", "Prototyping"]
+    "tags": ["Automation", "CAD", "OpenSCAD", "Workflow", "Prototyping", "Additive"]
   },
   {
     "id": "peg-vaccum",
@@ -84,7 +84,7 @@
     "date": "03/23/2025",
     "link": "https://www.printables.com/model/1241049-pegboard-handheld-vaccum-holder",
     "media": "projects/media/peg-vaccum.png",
-    "tags": ["Hardware", "CAD", "Additive", "Fixtures", "Prototyping"]
+    "tags": ["Hardware", "CAD", "Additive", "Fixtures", "Prototyping", "Fabrication"]
   },
   {
     "id": "jack",
@@ -128,6 +128,7 @@
     "title": "2D Truss Design + Analysis",
     "summary": "Design and analysis of 2d trusses with internal stresses given known loading conditions.",
     "link": "pdfs/portfolio/meen-305/meen-305-Project_1.pdf",
+    "date": "10/01/2024",
     "media": "projects/media/truss.png",
     "tags": ["Structures", "Analysis", "Statics", "MATLAB", "Documentation"],
     "pdfs": [
@@ -138,7 +139,8 @@
     "id": "marbles",
     "title": "Marbles Maze",
     "summary": "Modular marble maze game for elderly; won Best Prototype Award among 18 teams at MEEN 210 Project Showcase.",
-    "tags": ["SolidWorks", "Prototyping", "Design"],
+    "date": "11/01/2025",
+    "tags": ["SolidWorks", "Prototyping", "Design", "CAD"],
     "link": "pdfs/Meen210-m4-group13-fidgetfun.pdf",
     "media": "projects/media/marbles.png"
   },
@@ -146,6 +148,7 @@
     "id": "crank",
     "title": "Dynamic Crankshaft Modeling",
     "summary": "Modeling of torque, kinematics and reflected inertia of a mixing gearbox.",
+    "date": "03/01/2025",
     "link": "pdfs/portfolio/meen-363/meen-363-3_Group7.pdf",
     "media": "projects/media/crank.png",
     "tags": ["Dynamics", "Simulation", "Analysis", "MATLAB", "Mechanisms"],
@@ -157,6 +160,7 @@
     "id": "connections",
     "title": "Connections AI",
     "summary": "ML algorithm using word vectorization to play the NYT Connections game; built at TAMU Datathon 2024.",
+    "date": "11/01/2024",
     "tags": ["Python", "ML", "NLP"],
     "link": "https://github.com/Ian-Wilhite/Datathon24",
     "media": "projects/media/connections.png"
@@ -164,13 +168,15 @@
   {
     "id": "turtledocs",
     "title": "Turtle Knowledge Base",
-    "sumary": "Open Source Robotics wiki, for public use by TURTLE Robotics and affiliates.",
+    "summary": "Open Source Robotics wiki, for public use by TURTLE Robotics and affiliates.",
+    "date": "01/01/2026",
     "link": "https://docs.turtlerobotics.org/",
     "media": "projects/media/turtledocs.png",
-    "tags": ["Documentation", "Robotics", "Wiki", "Systems", "Open Source"]
+    "tags": ["Documentation", "Robotics", "Wiki", "Systems", "Open Source", "Automation"]
   },
   {
     "id": "id_holder",
+    "date": "02/01/2026",
     "title": "Turtle ID Holder",
     "summary": "Student ID holder with TURTLE Robotics Logo",
     "link": "https://www.printables.com/model/1598563-turtle-id-holder/files",
@@ -181,11 +187,22 @@
     "id": "itde-rov",
     "title": "Subsea ROV Thruster Control",
     "summary": "Control analyses for subsea ROV: spherical fixed thruster and four-thruster gimbal configurations.",
-    "tags": ["Controls", "ROV", "Simulation", "Analysis", "Hydrodynamics"],
+    "tags": ["Controls", "ROV", "Simulation", "Analysis", "Hydrodynamics", "MATLAB"],
+    "date": "08/01/2025",
+    "link": "www.subseatiebackforum.com/",
     "media": "projects/media/coffin.png",
     "pdfs": [
       {"label": "Spherical Thruster Control", "path": "pdfs/portfolio/itde-subsea-rov/spherical-fixed-thruster-control.pdf"},
       {"label": "Four Thruster Gimbal", "path": "pdfs/portfolio/itde-subsea-rov/four-thruster-gimabl-control.pdf"}
     ]
+  },
+  {
+    "id": "Rigatoni",
+    "title": "Rigatoni - Combat Robot",
+    "summary": "Built a 3lb Full-Body-Spinner combat robot.",
+    "date": "02/14/2026",
+    "link": "https://github.com/Ian-Wilhite/TONI",
+    "tags": ["Controls", "CAD", "Additive", "Design", "Documentation"],
+    "media": "projects/media/toni.png"
   }
 ]

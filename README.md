@@ -6,7 +6,7 @@ Static frontend that mirrors the provided dark terminal-style résumé layout.
 1. Open `index.html` in your browser (double-click or run a local server).
 2. Optional: run a quick dev server with Python if you prefer:
    ```bash
-   python3 -m http.server 8000
+   python3 -m http.server 8001
    ```
 3. Edit content directly in `index.html` and tweak styling in `style.css`.
 
