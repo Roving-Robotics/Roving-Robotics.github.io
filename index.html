@@ -23,7 +23,7 @@
     <section class="content">
       <div class="profile-card">
         <div class="avatar">
-          <img src="images/optimized/profile.png" alt="Profile photo">
+          <img src="images/optimized/profile.jpg" alt="Profile photo">
         </div>
         <div class="profile-meta">
           <p class="name">Ian Wilhite</p>
@@ -261,7 +261,23 @@
         card.className = 'project-card';
         const media = document.createElement('div');
         media.className = 'project-media';
-        media.style.backgroundImage = `url(${p.media}), linear-gradient(135deg, rgba(34,211,238,0.08), rgba(192,132,252,0.08))`;
+        // Show gradient immediately; load image with a lightweight runtime fallback between jpg/png.
+        const gradient = 'linear-gradient(135deg, rgba(34,211,238,0.08), rgba(192,132,252,0.08))';
+        media.style.backgroundImage = gradient;
+        const primary = p.media;
+        const alt = primary?.endsWith('.jpg')
+          ? primary.replace(/\\.jpg$/, '.png')
+          : primary?.endsWith('.png')
+            ? primary.replace(/\\.png$/, '.jpg')
+            : null;
+        const loader = new Image();
+        loader.onload = () => {
+          media.style.backgroundImage = `url(${primary}), ${gradient}`;
+        };
+        loader.onerror = () => {
+          if (alt) media.style.backgroundImage = `url(${alt}), ${gradient}`;
+        };
+        loader.src = primary;
         media.setAttribute('role', 'img');
         media.setAttribute('aria-label', `${p.title} preview`);
         const body = document.createElement('div');

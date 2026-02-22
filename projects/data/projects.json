@@ -6,7 +6,7 @@
     "tags": ["ROS2", "PX4", "AUV", "Controls", "Simulation"],
     "date": "04/01/2026",
     "link": "https://aarrg.jokane.net/",
-    "media": "projects/media/aqua2.png"
+    "media": "projects/media/aqua2.jpg"
   },
   {
     "id": "dron",
@@ -20,7 +20,7 @@
       {"label": "Spring 2025 Poster", "path": "pdfs/portfolio/turtle-dron/DRON-Spring-2025.pdf"}
     ],
     "date": "01/01/2024",
-    "media": "projects/media/dron.png"
+    "media": "projects/media/dron.jpg"
   },
   {
     "id": "perch",
@@ -57,7 +57,7 @@
     "pdfs": [
       {"label": "SEC Ignite Report", "path": "pdfs/portfolio/sec-ignite/AM5_2024.pdf"}
     ],
-    "media": "projects/media/ignite.png"
+    "media": "projects/media/ignite.jpg"
   },
   {
     "id": "peg-fire",
@@ -93,7 +93,7 @@
     "tags": ["Test", "Pneumatics", "Automation", "Fixtures", "Reliability"],
     "link": null,
     "date": "03/01/2022",
-    "media": "projects/media/jack.png"
+    "media": "projects/media/jack.jpg"
   },
   {
     "id": "antenna",
@@ -111,7 +111,7 @@
     "tags": ["MATLAB", "Optimization", "Mars", "Simulation", "Controls"],
     "date": "12/01/2024",
     "link": "https://github.com/Ian-Wilhite/meenp4",
-    "media": "projects/media/rover.png"
+    "media": "projects/media/rover.jpg"
   },
   {
     "id": "bungee",
@@ -142,7 +142,7 @@
     "date": "11/01/2025",
     "tags": ["SolidWorks", "Prototyping", "Design", "CAD"],
     "link": "pdfs/Meen210-m4-group13-fidgetfun.pdf",
-    "media": "projects/media/marbles.png"
+    "media": "projects/media/marbles.jpg"
   },
   {
     "id": "crank",
@@ -203,6 +203,6 @@
     "date": "02/14/2026",
     "link": "https://github.com/Ian-Wilhite/TONI",
     "tags": ["Controls", "CAD", "Additive", "Design", "Documentation"],
-    "media": "projects/media/toni.png"
+    "media": "projects/media/toni.jpg"
   }
 ]
