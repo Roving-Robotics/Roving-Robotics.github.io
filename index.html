@@ -65,8 +65,6 @@
             <button class="tab active" data-target="about">about.tsx</button>
             <button class="tab" data-target="projects"><span class="icon">📂</span> projects.md</button>
             <button class="tab" data-target="contributions"><span class="icon">🤝</span> Contribution</button>
-            <button class="tab" data-target="contact"><span class="icon">🌐</span> contact.online</button>
-            <button class="tab" data-target="cv">📄 CV.pdf</button>
           </div>
           <a class="source-link" href="https://github.com/Roving-Robotics/Roving-Robotics.github.io" aria-label="Source code">🗃 Source Code</a>
         </header>
@@ -190,23 +188,6 @@
           </div>
         </section>
 
-        <section id="cv" class="hidden">
-          <div class="cv-header">
-            <div class="panel-title">◎ CV</div>
-            <a class="pill-link" href="pdfs/CV.pdf" download>⬇ Download PDF</a>
-          </div>
-          <div class="cv-embed">
-            <iframe src="pdfs/CV.pdf" title="CV"></iframe>
-          </div>
-        </section>
-
-        <section id="contact" class="panel hidden">
-          <div class="panel-title">◎ Contact</div>
-          <p class="about-line">Email: <a href="mailto:ian.wilhite0@gmail.com">ian.wilhite0@gmail.com</a></p>
-          <p class="about-line">GitHub: <a href="https://github.com/Ian-Wilhite">github.com/Ian-Wilhite</a></p>
-          <p class="about-line">LinkedIn: <a href="https://www.linkedin.com/in/ian-wilhite/">linkedin.com/in/ian-wilhite</a></p>
-          <p class="about-line">Instagram: <a href="https://www.instagram.com/en._.ig/">@en._.ig</a></p>
-        </section>
       </div>
     </section>
   </main>
@@ -261,9 +242,6 @@
         card.className = 'project-card';
         const media = document.createElement('div');
         media.className = 'project-media';
-        // Show gradient immediately; load image with a lightweight runtime fallback between jpg/png.
-        const gradient = 'linear-gradient(135deg, rgba(34,211,238,0.08), rgba(192,132,252,0.08))';
-        media.style.backgroundImage = gradient;
         const primary = p.media;
         const alt = primary?.endsWith('.jpg')
           ? primary.replace(/\\.jpg$/, '.png')
@@ -272,10 +250,10 @@
             : null;
         const loader = new Image();
         loader.onload = () => {
-          media.style.backgroundImage = `url(${primary}), ${gradient}`;
+          media.style.backgroundImage = `url(${primary})`;
         };
         loader.onerror = () => {
-          if (alt) media.style.backgroundImage = `url(${alt}), ${gradient}`;
+          if (alt) media.style.backgroundImage = `url(${alt})`;
         };
         loader.src = primary;
         media.setAttribute('role', 'img');
